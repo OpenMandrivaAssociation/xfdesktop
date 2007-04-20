@@ -1,10 +1,10 @@
-%define version 4.4.0
+%define version 4.4.1
 %define __libtoolize /bin/true
 
 Summary: 	Desktop manager for the Xfce Desktop Environment
 Name: 		xfdesktop
 Version: 	%{version}
-Release: 	%mkrel 2
+Release: 	%mkrel 1
 License:	GPL
 URL: 		http://www.xfce.org/
 Source0: 	%{name}-%{version}.tar.bz2
