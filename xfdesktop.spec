@@ -4,7 +4,7 @@
 Summary: 	Desktop manager for the Xfce Desktop Environment
 Name: 		xfdesktop
 Version: 	%{version}
-Release: 	%mkrel 1
+Release: 	%mkrel 2
 License:	GPL
 URL: 		http://www.xfce.org/
 Source0: 	%{name}-%{version}.tar.bz2
@@ -19,6 +19,10 @@ Patch2:		xfdesktop-4.3.0-mdkmenu.patch
 # (mpol) 4.2.0-4mdk define default backdrop
 # trem : rejected
 # Patch3:		xfdesktop-4.3.0-backdrop.patch.bz2
+# (saispo) add Xubuntu patches
+Patch4:		02_show_context_menu.patch  
+Patch5:		03_special_icons_config.patch  
+Patch6:		10_backdrop_zoom.patch
 Group: 		Graphical desktop/Xfce
 BuildRoot: 	%{_tmppath}/%{name}-root
 Requires:	mandriva-theme
@@ -38,9 +42,12 @@ Xfdesktop is a desktop manager for the Xfce Desktop Environment.
 #%patch2 -p1 -b .mdkmenu
 # trem : rejected
 # %patch3 -p1 -b .backdrop
+%patch4 -p1 -b .show-context
+%patch5 -p1 -b .special-icons
+%patch6 -p1 -b .backdrop
 
 # use www-browser
-perl -pi -e 's#mozilla#www-browser#' menu.*
+#perl -pi -e 's#mozilla#www-browser#' menu.*
 # use thunar as default fm
 perl -pi -e 's#xffm#thunar#g' menu.*
 
