@@ -1,13 +1,11 @@
-%define version 4.4.1
-%define __libtoolize /bin/true
-
-Summary: 	Desktop manager for the Xfce Desktop Environment
-Name: 		xfdesktop
-Version: 	%{version}
-Release: 	%mkrel 2
+Summary:	Desktop manager for the Xfce Desktop Environment
+Name:		xfdesktop
+Version: 	4.4.1
+Release:	%mkrel 2
 License:	GPL
-URL: 		http://www.xfce.org/
-Source0: 	%{name}-%{version}.tar.bz2
+Group:		Graphical desktop/Xfce
+URL:		http://www.xfce.org
+Source0:	%{name}-%{version}.tar.bz2
 # Xfce menu-method script
 Source1:	xfce-menu-method.bz2
 # Remove "Mandriva Linux" submenu from menu2.xml
@@ -23,8 +21,6 @@ Patch2:		xfdesktop-4.3.0-mdkmenu.patch
 Patch4:		02_show_context_menu.patch  
 Patch5:		03_special_icons_config.patch  
 Patch6:		10_backdrop_zoom.patch
-Group: 		Graphical desktop/Xfce
-BuildRoot: 	%{_tmppath}/%{name}-root
 Requires:	mandriva-theme
 Requires:	desktop-common-data
 BuildRequires:	xfce-mcs-manager-devel >= %{version}
@@ -32,7 +28,9 @@ BuildRequires:	libgdk_pixbuf2.0-devel
 BuildRequires:	libxml2-devel >= 2.4.0
 BuildRequires:	xfce-panel-devel >= 4.3.0
 BuildRequires:	exo-devel
-BuildRequires:  thunar-devel >= 0.8.0
+BuildRequires:	thunar-devel >= 0.8.0
+BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
+
 %description
 Xfdesktop is a desktop manager for the Xfce Desktop Environment.
 
@@ -52,55 +50,46 @@ Xfdesktop is a desktop manager for the Xfce Desktop Environment.
 perl -pi -e 's#xffm#thunar#g' menu.*
 
 %build
-%configure2_5x --sysconfdir=%_sysconfdir/X11
+%configure2_5x \
+	--sysconfdir=%{_sysconfdir}/X11 \
+	--disable-static \
+
 %make
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 %makeinstall_std
-mkdir -p %buildroot%_sysconfdir/menu-methods
-bzcat %SOURCE1 > %buildroot%_sysconfdir/menu-methods/xfce4
-bzcat %SOURCE2 > %buildroot%_sysconfdir/X11/xdg/xfce4/desktop/menu_method_postrun.sh
+
+mkdir -p %{buildroot}%{_sysconfdir}/menu-methods
+bzcat %SOURCE1 > %{buildroot}%{_sysconfdir}/menu-methods/xfce4
+bzcat %SOURCE2 > %{buildroot}%{_sysconfdir}/X11/xdg/xfce4/desktop/menu_method_postrun.sh
 
 # fix permissions
-chmod 0755 %buildroot%_sysconfdir/X11/xdg/xfce4/desktop/menu_method_postrun.sh
+chmod 0755 %{buildroot}%{_sysconfdir}/X11/xdg/xfce4/desktop/menu_method_postrun.sh
 
-# remove unneeded devel files
-rm -f %{buildroot}/%{_libdir}/xfce4/mcs-plugins/*.*a \
-	%{buildroot}/%{_libdir}/xfce4/modules/*.*a \
-	%{buildroot}/%{_libdir}/xfce4/panel-plugins/*.*a
-
-%find_lang %name
+%find_lang %{name}
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %post
-%update_menus
-touch --no-create %{_datadir}/icons/hicolor || :
-if [ -x %{_bindir}/gtk-update-icon-cache ]; then
-   %{_bindir}/gtk-update-icon-cache --quiet %{_datadir}/icons/hicolor || :
-fi
+%{update_menus}
+%update_icon_cache hicolor
 
 %postun
-%clean_menus
-touch --no-create %{_datadir}/icons/hicolor || :
-if [ -x %{_bindir}/gtk-update-icon-cache ]; then
-   %{_bindir}/gtk-update-icon-cache --quiet %{_datadir}/icons/hicolor || :
-fi
+%{clean_menus}
+%clean_icon_cache hicolor
 
 %files -f %{name}.lang
 %defattr(-,root,root)
 %doc README TODO COPYING AUTHORS
 %config(noreplace) %{_sysconfdir}/X11/xdg/*
-%attr(755,root,root) %config(noreplace) %_sysconfdir/menu-methods/xfce4
+%attr(755,root,root) %config(noreplace) %{_sysconfdir}/menu-methods/xfce4
 %{_bindir}/*
 %{_libdir}/xfce4/*
 %{_datadir}/applications/*
-%{_datadir}/icons/*
+%{_iconsdir}/hicolor/*
 %{_datadir}/pixmaps/*
 %{_datadir}/xfce4/*
 %{_datadir}/xfce4-menueditor/xfce4-menueditor.ui
 %{_mandir}/man1/*
-
-
