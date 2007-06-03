@@ -25,6 +25,8 @@ Patch6:		10_backdrop_zoom.patch
 Patch7:		%{name}-4.4.1-mdv-wallpaper.patch
 # (tpg) show wallpaper by default
 Patch8:		%{name}-4.4.1-show-wallpaper.patch
+# (tpg) xfce menu has a caption "Mandriva" and uses mdv star icon
+Patch9:		%{name}-4.4.1-mdv-menu.patch
 Requires:	mandriva-theme
 Requires:	ia_ora-gnome
 Requires:	desktop-common-data
@@ -54,6 +56,7 @@ real multiscreen and xinerama support, and it provides a desktop menu editor.
 %patch6 -p1 -b .backdrop
 %patch7 -p0 -b .wallpaper
 %patch8 -p0 -b .show
+%patch9 -p0 -b .menu
 
 # use www-browser
 #perl -pi -e 's#mozilla#www-browser#' menu.*
