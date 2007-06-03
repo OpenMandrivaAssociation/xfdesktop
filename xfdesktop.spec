@@ -1,7 +1,7 @@
 Summary:	Desktop manager for the Xfce Desktop Environment
 Name:		xfdesktop
 Version: 	4.4.1
-Release:	%mkrel 3
+Release:	%mkrel 4
 License:	GPL
 Group:		Graphical desktop/Xfce
 URL:		http://www.xfce.org
@@ -22,7 +22,9 @@ Patch4:		02_show_context_menu.patch
 Patch5:		03_special_icons_config.patch  
 Patch6:		10_backdrop_zoom.patch
 # (tpg) use  wallpaper from mandriva-theme
-Patch7:		xfdesktop-mdv-wallpaper.patch
+Patch7:		%{name}-4.4.1-mdv-wallpaper.patch
+# (tpg) show wallpaper by default
+Patch8:		%{name}-4.4.1-show-wallpaper.patch
 Requires:	mandriva-theme
 Requires:	ia_ora-gnome
 Requires:	desktop-common-data
@@ -51,6 +53,7 @@ real multiscreen and xinerama support, and it provides a desktop menu editor.
 %patch5 -p1 -b .special-icons
 %patch6 -p1 -b .backdrop
 %patch7 -p0 -b .wallpaper
+%patch8 -p0 -b .show
 
 # use www-browser
 #perl -pi -e 's#mozilla#www-browser#' menu.*
