@@ -10,13 +10,6 @@ Source0:	%{name}-%{version}.tar.bz2
 Source1:	xfce-menu-method.bz2
 # Remove "Mandriva Linux" submenu from menu2.xml
 Source2:	xfce-4.2.2-menu_method_postrun.sh.bz2
-# (fc) 4.0.6-2mdk fix background dithering
-Patch0:		xfdesktop-4.3.0-dither.patch
-# (mpol) 4.1.99.1-4mdk use mdkmenu
-Patch2:		xfdesktop-4.3.0-mdkmenu.patch
-# (mpol) 4.2.0-4mdk define default backdrop
-# trem : rejected
-# Patch3:		xfdesktop-4.3.0-backdrop.patch.bz2
 # (saispo) add Xubuntu patches
 Patch4:		02_show_context_menu.patch  
 Patch5:		03_special_icons_config.patch  
@@ -27,6 +20,7 @@ Patch7:		%{name}-4.4.1-mdv-wallpaper.patch
 Patch8:		%{name}-4.4.1-show-wallpaper.patch
 # (tpg) xfce menu has a caption "Mandriva" and uses mdv star icon
 Patch9:		%{name}-4.4.1-mdv-menu.patch
+Patch10:	%{name}-4.4.1-fix-memleak.patch
 Requires:	mandriva-theme
 Requires:	ia_ora-gnome
 Requires:	desktop-common-data
@@ -47,16 +41,13 @@ real multiscreen and xinerama support, and it provides a desktop menu editor.
 
 %prep
 %setup -q
-#%patch0 -p1 -b .dither
-#%patch2 -p1 -b .mdkmenu
-# trem : rejected
-# %patch3 -p1 -b .backdrop
 %patch4 -p1 -b .show-context
 %patch5 -p1 -b .special-icons
 %patch6 -p1 -b .backdrop
 %patch7 -p0 -b .wallpaper
 %patch8 -p0 -b .show
 %patch9 -p0 -b .menu
+%patch10 -p0 -b .memleak
 
 # use www-browser
 #perl -pi -e 's#mozilla#www-browser#' menu.*
