@@ -1,7 +1,7 @@
 Summary:	Desktop manager for the Xfce Desktop Environment
 Name:		xfdesktop
 Version: 	4.4.1
-Release:	%mkrel 3
+Release:	%mkrel 4
 License:	GPL
 Group:		Graphical desktop/Xfce
 URL:		http://www.xfce.org
@@ -88,7 +88,7 @@ rm -rf %{buildroot}
 %files -f %{name}.lang
 %defattr(-,root,root)
 %doc README TODO COPYING AUTHORS
-%config(noreplace) %{_sysconfdir}/X11/xdg/*
+%config(noreplace) %{_sysconfdir}/X11/xdg/desktop/*
 %attr(755,root,root) %config(noreplace) %{_sysconfdir}/menu-methods/xfce4
 %{_bindir}/*
 %{_libdir}/xfce4/*
