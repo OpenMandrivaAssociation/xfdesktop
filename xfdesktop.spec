@@ -88,6 +88,7 @@ rm -rf %{buildroot}
 %files -f %{name}.lang
 %defattr(-,root,root)
 %doc README TODO COPYING AUTHORS
+%dir %{_sysconfdir}/X11/xdg/xfce4/desktop
 %config(noreplace) %{_sysconfdir}/X11/xdg/xfce4/desktop/*
 %attr(755,root,root) %config(noreplace) %{_sysconfdir}/menu-methods/xfce4
 %{_bindir}/*
