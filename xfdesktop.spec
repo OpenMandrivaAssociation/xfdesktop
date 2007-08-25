@@ -1,7 +1,7 @@
 Summary:	Desktop manager for the Xfce Desktop Environment
 Name:		xfdesktop
 Version: 	4.4.1
-Release:	%mkrel 4
+Release:	%mkrel 5
 License:	GPL
 Group:		Graphical desktop/Xfce
 URL:		http://www.xfce.org
@@ -21,6 +21,7 @@ Patch8:		%{name}-4.4.1-show-wallpaper.patch
 # (tpg) xfce menu has a caption "Mandriva" and uses mdv star icon
 Patch9:		%{name}-4.4.1-mdv-menu.patch
 Patch10:	%{name}-4.4.1-fix-memleak.patch
+Patch11:	%{name}-4.4.1-gtk211x-mouse.patch
 Requires:	mandriva-theme
 Requires:	ia_ora-gnome
 Requires:	desktop-common-data
@@ -48,6 +49,7 @@ real multiscreen and xinerama support, and it provides a desktop menu editor.
 %patch8 -p0 -b .show
 %patch9 -p0 -b .menu
 %patch10 -p0 -b .memleak
+%patch11 -p1 -b .mouse
 
 # use www-browser
 #perl -pi -e 's#mozilla#www-browser#' menu.*
@@ -66,8 +68,8 @@ rm -rf %{buildroot}
 %makeinstall_std
 
 mkdir -p %{buildroot}%{_sysconfdir}/menu-methods
-bzcat %SOURCE1 > %{buildroot}%{_sysconfdir}/menu-methods/xfce4
-bzcat %SOURCE2 > %{buildroot}%{_sysconfdir}/X11/xdg/xfce4/desktop/menu_method_postrun.sh
+bzcat %{SOURCE1} > %{buildroot}%{_sysconfdir}/menu-methods/xfce4
+bzcat %{SOURCE2} > %{buildroot}%{_sysconfdir}/X11/xdg/xfce4/desktop/menu_method_postrun.sh
 
 # fix permissions
 chmod 0755 %{buildroot}%{_sysconfdir}/X11/xdg/xfce4/desktop/menu_method_postrun.sh
