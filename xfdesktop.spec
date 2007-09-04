@@ -13,7 +13,7 @@ Source2:	xfce-4.2.2-menu_method_postrun.sh.bz2
 # (saispo) add Xubuntu patches
 Patch4:		02_show_context_menu.patch  
 Patch5:		03_special_icons_config.patch  
-Patch6:		10_backdrop_zoom.patch
+Patch6:		%{name}-4.4.1-backdrop-zoom.patch
 # (tpg) use  wallpaper from mandriva-theme
 Patch7:		%{name}-4.4.1-mdv-wallpaper.patch
 # (tpg) show wallpaper by default
