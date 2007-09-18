@@ -1,7 +1,7 @@
 Summary:	Desktop manager for the Xfce Desktop Environment
 Name:		xfdesktop
 Version: 	4.4.1
-Release:	%mkrel 5
+Release:	%mkrel 7
 License:	GPL
 Group:		Graphical desktop/Xfce
 URL:		http://www.xfce.org
@@ -25,6 +25,7 @@ Patch11:	%{name}-4.4.1-gtk211x-mouse.patch
 Requires:	mandriva-theme
 Requires:	ia_ora-gnome
 Requires:	desktop-common-data
+Requires:	xfce-utils
 BuildRequires:	xfce-mcs-manager-devel >= %{version}
 BuildRequires:	libgdk_pixbuf2.0-devel
 BuildRequires:	libxml2-devel >= 2.4.0
