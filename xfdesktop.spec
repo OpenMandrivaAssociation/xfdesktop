@@ -1,15 +1,11 @@
 Summary:	Desktop manager for the Xfce Desktop Environment
 Name:		xfdesktop
 Version: 	4.4.1
-Release:	%mkrel 7
+Release:	%mkrel 8
 License:	GPL
 Group:		Graphical desktop/Xfce
 URL:		http://www.xfce.org
 Source0:	%{name}-%{version}.tar.bz2
-# Xfce menu-method script
-Source1:	xfce-menu-method.bz2
-# Remove "Mandriva Linux" submenu from menu2.xml
-Source2:	xfce-4.2.2-menu_method_postrun.sh.bz2
 # (saispo) add Xubuntu patches
 Patch4:		02_show_context_menu.patch  
 Patch5:		03_special_icons_config.patch  
@@ -68,13 +64,6 @@ perl -pi -e 's#xffm#thunar#g' menu.*
 rm -rf %{buildroot}
 %makeinstall_std
 
-mkdir -p %{buildroot}%{_sysconfdir}/menu-methods
-bzcat %{SOURCE1} > %{buildroot}%{_sysconfdir}/menu-methods/xfce4
-bzcat %{SOURCE2} > %{buildroot}%{_sysconfdir}/X11/xdg/xfce4/desktop/menu_method_postrun.sh
-
-# fix permissions
-chmod 0755 %{buildroot}%{_sysconfdir}/X11/xdg/xfce4/desktop/menu_method_postrun.sh
-
 %find_lang %{name}
 
 %clean
@@ -92,8 +81,7 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %doc README TODO COPYING AUTHORS
 %dir %{_sysconfdir}/X11/xdg/xfce4/desktop
-%config(noreplace) %{_sysconfdir}/X11/xdg/xfce4/desktop/*
-%attr(755,root,root) %config(noreplace) %{_sysconfdir}/menu-methods/xfce4
+%exclude %{_sysconfdir}/X11/xdg/xfce4/desktop/*
 %{_bindir}/*
 %{_libdir}/xfce4/*
 %{_datadir}/applications/*
