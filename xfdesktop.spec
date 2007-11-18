@@ -1,7 +1,7 @@
 Summary:	Desktop manager for the Xfce Desktop Environment
 Name:		xfdesktop
 Version: 	4.4.2
-Release:	%mkrel 2
+Release:	%mkrel 3
 License:	GPL
 Group:		Graphical desktop/Xfce
 URL:		http://www.xfce.org
@@ -9,11 +9,11 @@ Source0:	%{name}-%{version}.tar.bz2
 Requires:	mandriva-theme
 Requires:	ia_ora-gnome
 Requires:	desktop-common-data
-Requires:	xfce-utils
+Requires:	xfce-utils >= %{version}
 BuildRequires:	xfce-mcs-manager-devel >= %{version}
 BuildRequires:	libgdk_pixbuf2.0-devel
 BuildRequires:	libxml2-devel >= 2.4.0
-BuildRequires:	xfce-panel-devel >= 4.3.0
+BuildRequires:	xfce4-panel-devel >= %{version}
 BuildRequires:	exo-devel
 BuildRequires:	thunar-devel >= 0.8.0
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
