@@ -1,23 +1,11 @@
 Summary:	Desktop manager for the Xfce Desktop Environment
 Name:		xfdesktop
-Version: 	4.4.1
-Release:	%mkrel 8
+Version: 	4.4.2
+Release:	%mkrel 1
 License:	GPL
 Group:		Graphical desktop/Xfce
 URL:		http://www.xfce.org
 Source0:	%{name}-%{version}.tar.bz2
-# (saispo) add Xubuntu patches
-Patch4:		02_show_context_menu.patch  
-Patch5:		03_special_icons_config.patch  
-Patch6:		%{name}-4.4.1-backdrop-zoom.patch
-# (tpg) use  wallpaper from mandriva-theme
-Patch7:		%{name}-4.4.1-mdv-wallpaper.patch
-# (tpg) show wallpaper by default
-Patch8:		%{name}-4.4.1-show-wallpaper.patch
-# (tpg) xfce menu has a caption "Mandriva" and uses mdv star icon
-Patch9:		%{name}-4.4.1-mdv-menu.patch
-Patch10:	%{name}-4.4.1-fix-memleak.patch
-Patch11:	%{name}-4.4.1-gtk211x-mouse.patch
 Requires:	mandriva-theme
 Requires:	ia_ora-gnome
 Requires:	desktop-common-data
@@ -31,27 +19,14 @@ BuildRequires:	thunar-devel >= 0.8.0
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
-The desktop manager sets the background image, provides a right-click 
-menu to launch applications and can optionally show files 
-(including application launchers) or iconified windows. It includes 
-gradient support for background color, saturation support for background image, 
+The desktop manager sets the background image, provides a right-click
+menu to launch applications and can optionally show files
+(including application launchers) or iconified windows. It includes
+gradient support for background color, saturation support for background image,
 real multiscreen and xinerama support, and it provides a desktop menu editor.
 
 %prep
 %setup -q
-%patch4 -p1 -b .show-context
-%patch5 -p1 -b .special-icons
-%patch6 -p1 -b .backdrop
-%patch7 -p0 -b .wallpaper
-%patch8 -p0 -b .show
-%patch9 -p0 -b .menu
-%patch10 -p0 -b .memleak
-%patch11 -p1 -b .mouse
-
-# use www-browser
-#perl -pi -e 's#mozilla#www-browser#' menu.*
-# use thunar as default fm
-perl -pi -e 's#xffm#thunar#g' menu.*
 
 %build
 %configure2_5x \
