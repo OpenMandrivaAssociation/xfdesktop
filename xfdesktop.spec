@@ -2,7 +2,7 @@ Summary:	Desktop manager for the Xfce Desktop Environment
 Name:		xfdesktop
 Version: 	4.4.2
 Release:	%mkrel 3
-License:	GPL
+License:	GPLv2+
 Group:		Graphical desktop/Xfce
 URL:		http://www.xfce.org
 Source0:	%{name}-%{version}.tar.bz2
@@ -12,7 +12,6 @@ Requires:	desktop-common-data
 Requires:	xfce-utils >= %{version}
 BuildRequires:	xfce-mcs-manager-devel >= %{version}
 BuildRequires:	libgdk_pixbuf2.0-devel
-BuildRequires:	libxml2-devel >= 2.4.0
 BuildRequires:	xfce4-panel-devel >= %{version}
 BuildRequires:	exo-devel
 BuildRequires:	thunar-devel >= 0.8.0
@@ -31,8 +30,7 @@ real multiscreen and xinerama support, and it provides a desktop menu editor.
 %build
 %configure2_5x \
 	--sysconfdir=%{_sysconfdir}/X11 \
-	--disable-static \
-
+	--disable-static
 %make
 
 %install
@@ -54,7 +52,7 @@ rm -rf %{buildroot}
 
 %files -f %{name}.lang
 %defattr(-,root,root)
-%doc README TODO COPYING AUTHORS
+%doc README TODO ChangeLog AUTHORS NEWS
 %dir %{_sysconfdir}/X11/xdg/xfce4/desktop
 %exclude %{_sysconfdir}/X11/xdg/xfce4/desktop/*
 %{_bindir}/*
