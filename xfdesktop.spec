@@ -7,7 +7,6 @@ Group:		Graphical desktop/Xfce
 URL:		http://www.xfce.org
 Source0:	%{name}-%{version}.tar.bz2
 Requires:	mandriva-theme
-Requires:	ia_ora-xfce
 Requires:	desktop-common-data
 Requires:	xfce-utils >= %{version}
 BuildRequires:	xfce-mcs-manager-devel >= %{version}
