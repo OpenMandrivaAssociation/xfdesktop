@@ -1,11 +1,12 @@
 Summary:	Desktop manager for the Xfce Desktop Environment
 Name:		xfdesktop
 Version: 	4.4.2
-Release:	%mkrel 6
+Release:	%mkrel 7
 License:	GPLv2+
 Group:		Graphical desktop/Xfce
 URL:		http://www.xfce.org
 Source0:	%{name}-%{version}.tar.bz2
+Patch0:         01_show-backdrop-by-default.patch
 Requires:	mandriva-theme
 Requires:	desktop-common-data
 Requires:	xfce-utils >= %{version}
@@ -25,6 +26,8 @@ real multiscreen and xinerama support, and it provides a desktop menu editor.
 
 %prep
 %setup -q
+
+%patch0 -p1
 
 %build
 %configure2_5x \
