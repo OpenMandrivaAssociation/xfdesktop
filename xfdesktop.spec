@@ -54,7 +54,7 @@ rm -rf %{buildroot}
 
 %files -f %{name}.lang
 %defattr(-,root,root)
-%doc README TODO ChangeLog AUTHORS NEWS
+%doc README TODO AUTHORS NEWS
 %dir %{_sysconfdir}/X11/xdg/xfce4/desktop
 %exclude %{_sysconfdir}/X11/xdg/xfce4/desktop/*
 %{_bindir}/*
