@@ -16,7 +16,6 @@ BuildRequires:	thunar-devel >= 0.8.0
 Requires:	mandriva-theme
 Requires:	desktop-common-data
 Requires:	xfce-utils >= %{version}
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 The desktop manager sets the background image, provides a right-click
