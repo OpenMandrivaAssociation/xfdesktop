@@ -1,20 +1,21 @@
 Summary:	Desktop manager for the Xfce Desktop Environment
 Name:		xfdesktop
-Version: 	4.4.2
-Release:	%mkrel 7
+Version:	4.4.2
+Release:	%mkrel 8
 License:	GPLv2+
 Group:		Graphical desktop/Xfce
 URL:		http://www.xfce.org
 Source0:	%{name}-%{version}.tar.bz2
-Patch0:         01_show-backdrop-by-default.patch
-Requires:	mandriva-theme
-Requires:	desktop-common-data
-Requires:	xfce-utils >= %{version}
+Patch0:		01_show-backdrop-by-default.patch
+Patch1:		%{name}-4.4.2-use-eject-where-necessary.patch
 BuildRequires:	xfce-mcs-manager-devel >= %{version}
 BuildRequires:	libgdk_pixbuf2.0-devel
 BuildRequires:	xfce4-panel-devel >= %{version}
 BuildRequires:	exo-devel
 BuildRequires:	thunar-devel >= 0.8.0
+Requires:	mandriva-theme
+Requires:	desktop-common-data
+Requires:	xfce-utils >= %{version}
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
@@ -26,8 +27,8 @@ real multiscreen and xinerama support, and it provides a desktop menu editor.
 
 %prep
 %setup -q
-
 %patch0 -p1
+%patch1 -p1 -b .eject
 
 %build
 %configure2_5x \
