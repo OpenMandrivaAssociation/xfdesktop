@@ -9,6 +9,7 @@ Source0:	%{name}-%{version}.tar.bz2
 Patch0:		01_show-backdrop-by-default.patch
 Patch1:		%{name}-4.4.2-use-eject-where-necessary.patch
 Patch2:		%{name}-4.4.2-menu-free-items-leak.patch
+Patch3:		%{name}-4.4.2-fix-relocation-x86_64.patch
 BuildRequires:	xfce-mcs-manager-devel >= %{version}
 BuildRequires:	libgdk_pixbuf2.0-devel
 BuildRequires:	xfce4-panel-devel >= %{version}
@@ -31,6 +32,11 @@ real multiscreen and xinerama support, and it provides a desktop menu editor.
 %patch0 -p1
 %patch1 -p1 -b .eject
 %patch2 -p1 -b .leak
+%if %mdkversion > 200800
+%ifnarch ix86
+%patch3 -p1 -b .reloc
+%endif
+%endif
 
 %build
 %configure2_5x \
