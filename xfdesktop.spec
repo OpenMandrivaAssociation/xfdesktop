@@ -1,7 +1,7 @@
 Summary:	Desktop manager for the Xfce Desktop Environment
 Name:		xfdesktop
 Version:	4.4.2
-Release:	%mkrel 10
+Release:	%mkrel 11
 License:	GPLv2+
 Group:		Graphical desktop/Xfce
 URL:		http://www.xfce.org
