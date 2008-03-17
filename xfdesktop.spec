@@ -10,11 +10,13 @@ Patch0:		01_show-backdrop-by-default.patch
 Patch1:		%{name}-4.4.2-use-eject-where-necessary.patch
 Patch2:		%{name}-4.4.2-menu-free-items-leak.patch
 Patch3:		%{name}-4.4.2-fix-relocation-x86_64.patch
+Patch4:		%{name}-4.4.2-hide-desktop-files-marked-as-hidden.patch
 BuildRequires:	xfce-mcs-manager-devel >= %{version}
 BuildRequires:	libgdk_pixbuf2.0-devel
 BuildRequires:	xfce4-panel-devel >= %{version}
 BuildRequires:	exo-devel
 BuildRequires:	thunar-devel >= 0.8.0
+BuildRequires:	libusb-devel
 Requires:	mandriva-theme
 Requires:	desktop-common-data
 Requires:	xfce-utils >= %{version}
@@ -37,6 +39,7 @@ real multiscreen and xinerama support, and it provides a desktop menu editor.
 %patch3 -p1 -b .reloc
 %endif
 %endif
+%patch4 -p1
 
 %build
 %configure2_5x \
