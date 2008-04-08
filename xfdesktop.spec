@@ -1,7 +1,7 @@
 Summary:	Desktop manager for the Xfce Desktop Environment
 Name:		xfdesktop
 Version:	4.4.2
-Release:	%mkrel 12
+Release:	%mkrel 13
 License:	GPLv2+
 Group:		Graphical desktop/Xfce
 URL:		http://www.xfce.org
@@ -22,6 +22,7 @@ BuildRequires:	libusb-devel
 Requires:	mandriva-theme
 Requires:	desktop-common-data
 Requires:	xfce-utils >= %{version}
+Requires:	mandriva-xfce-config
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
