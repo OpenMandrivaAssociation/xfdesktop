@@ -13,6 +13,7 @@ Patch3:		%{name}-4.4.2-fix-relocation-x86_64.patch
 Patch4:		%{name}-4.4.2-hide-desktop-files-marked-as-hidden.patch
 Patch5:		%{name}-4.4.2-default-mdv-color.patch
 Patch6:		%{name}-4.4.2-fix-settings_register_callback-assertion.patch
+# (tpg) http://bugzilla.xfce.org/show_bug.cgi?id=4062
 Patch7:		%{name}-4.4.2-xdg-user-dirs.patch
 BuildRequires:	xfce-mcs-manager-devel >= %{version}
 BuildRequires:	libgdk_pixbuf2.0-devel
