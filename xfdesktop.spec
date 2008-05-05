@@ -1,7 +1,7 @@
 Summary:	Desktop manager for the Xfce Desktop Environment
 Name:		xfdesktop
 Version:	4.4.2
-Release:	%mkrel 13
+Release:	%mkrel 14
 License:	GPLv2+
 Group:		Graphical desktop/Xfce
 URL:		http://www.xfce.org
@@ -13,6 +13,7 @@ Patch3:		%{name}-4.4.2-fix-relocation-x86_64.patch
 Patch4:		%{name}-4.4.2-hide-desktop-files-marked-as-hidden.patch
 Patch5:		%{name}-4.4.2-default-mdv-color.patch
 Patch6:		%{name}-4.4.2-fix-settings_register_callback-assertion.patch
+Patch7:		%{name}-4.4.2-xdg-user-dirs.patch
 BuildRequires:	xfce-mcs-manager-devel >= %{version}
 BuildRequires:	libgdk_pixbuf2.0-devel
 BuildRequires:	xfce4-panel-devel >= %{version}
@@ -45,6 +46,7 @@ real multiscreen and xinerama support, and it provides a desktop menu editor.
 %patch4 -p1
 %patch5 -p1
 %patch6 -p1
+%patch7 -p1
 
 %build
 %configure2_5x \
