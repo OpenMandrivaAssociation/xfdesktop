@@ -78,8 +78,13 @@ rm -rf %{buildroot}
 %files -f %{name}.lang
 %defattr(-,root,root)
 %doc README TODO AUTHORS NEWS
+%if %mdkversion < 200900
 %dir %{_sysconfdir}/X11/xdg/xfce4/desktop
 %exclude %{_sysconfdir}/X11/xdg/xfce4/desktop/*
+%else
+%dir %{_sysconfdir}/xdg/xfce4/desktop
+%exclude %{_sysconfdir}/xdg/xfce4/desktop/*
+%endif
 %{_bindir}/*
 %{_libdir}/xfce4/*
 %{_datadir}/applications/*
