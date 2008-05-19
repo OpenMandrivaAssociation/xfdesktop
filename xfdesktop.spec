@@ -1,7 +1,7 @@
 Summary:	Desktop manager for the Xfce Desktop Environment
 Name:		xfdesktop
 Version:	4.4.2
-Release:	%mkrel 15
+Release:	%mkrel 16
 License:	GPLv2+
 Group:		Graphical desktop/Xfce
 URL:		http://www.xfce.org
@@ -15,6 +15,7 @@ Patch5:		%{name}-4.4.2-default-mdv-color.patch
 Patch6:		%{name}-4.4.2-fix-settings_register_callback-assertion.patch
 # (tpg) http://bugzilla.xfce.org/show_bug.cgi?id=4062
 Patch7:		%{name}-4.4.2-xdg-user-dirs.patch
+Patch8:		%{name}-4.4.2-simplify-freeing-code.patch
 BuildRequires:	xfce-mcs-manager-devel >= %{version}
 BuildRequires:	libgdk_pixbuf2.0-devel
 BuildRequires:	xfce4-panel-devel >= %{version}
@@ -47,7 +48,10 @@ real multiscreen and xinerama support, and it provides a desktop menu editor.
 %patch4 -p1
 %patch5 -p1
 %patch6 -p1
+%if %mdkversion > 200810
 %patch7 -p1
+%endif
+%patch8 -p1
 
 %build
 %configure2_5x \
