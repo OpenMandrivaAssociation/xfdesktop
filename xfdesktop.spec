@@ -1,7 +1,7 @@
 Summary:	Desktop manager for the Xfce Desktop Environment
 Name:		xfdesktop
 Version:	4.4.2
-Release:	%mkrel 16
+Release:	%mkrel 17
 License:	GPLv2+
 Group:		Graphical desktop/Xfce
 URL:		http://www.xfce.org
@@ -99,5 +99,5 @@ rm -rf %{buildroot}
 %{_iconsdir}/hicolor/*
 %{_datadir}/pixmaps/*
 %{_datadir}/xfce4/*
-%{_datadir}/xfce4-menueditor/xfce4-menueditor.ui
+%{_datadir}/xfce4-menueditor
 %{_mandir}/man1/*
