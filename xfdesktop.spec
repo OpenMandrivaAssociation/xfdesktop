@@ -14,6 +14,7 @@ Patch4:		%{name}-4.4.2-hide-desktop-files-marked-as-hidden.patch
 Patch5:		%{name}-4.4.2-default-mdv-color.patch
 Patch6:		%{name}-4.4.2-fix-settings_register_callback-assertion.patch
 # (tpg) http://bugzilla.xfce.org/show_bug.cgi?id=4062
+# and https://bugzilla.redhat.com/show_bug.cgi?id=457740
 Patch7:		%{name}-4.4.2-xdg-user-dirs.patch
 Patch8:		%{name}-4.4.2-simplify-freeing-code.patch
 Patch9:		%{name}-4.4.2-activate-menu-item.patch
@@ -50,9 +51,7 @@ real multiscreen and xinerama support, and it provides a desktop menu editor.
 %patch4 -p1
 %patch5 -p1
 %patch6 -p1
-%if %mdkversion > 200810
 %patch7 -p1
-%endif
 %patch8 -p1
 %patch9 -p1
 %patch10 -p1
