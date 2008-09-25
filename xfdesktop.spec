@@ -1,7 +1,7 @@
 Summary:	Desktop manager for the Xfce Desktop Environment
 Name:		xfdesktop
 Version:	4.4.2
-Release:	%mkrel 21
+Release:	%mkrel 22
 License:	GPLv2+
 Group:		Graphical desktop/Xfce
 URL:		http://www.xfce.org
@@ -19,6 +19,7 @@ Patch7:		%{name}-4.4.2-xdg-user-dirs.patch
 Patch8:		%{name}-4.4.2-simplify-freeing-code.patch
 Patch9:		%{name}-4.4.2-activate-menu-item.patch
 Patch10:	%{name}-4.4.2-backdrop-zoom.patch
+Patch11:	%{name}-4.4.2-enable-double-buffering.patch
 BuildRequires:	xfce-mcs-manager-devel >= %{version}
 BuildRequires:	libgdk_pixbuf2.0-devel
 BuildRequires:	xfce4-panel-devel >= %{version}
@@ -55,6 +56,7 @@ real multiscreen and xinerama support, and it provides a desktop menu editor.
 %patch8 -p1
 %patch9 -p1
 %patch10 -p1
+%patch11 -p1 -b .db
 
 %build
 # (tpg) for patch 7
