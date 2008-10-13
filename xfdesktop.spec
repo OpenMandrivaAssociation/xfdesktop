@@ -1,7 +1,7 @@
 Summary:	Desktop manager for the Xfce Desktop Environment
 Name:		xfdesktop
 Version:	4.4.2
-Release:	%mkrel 22
+Release:	%mkrel 23
 License:	GPLv2+
 Group:		Graphical desktop/Xfce
 URL:		http://www.xfce.org
@@ -59,15 +59,11 @@ real multiscreen and xinerama support, and it provides a desktop menu editor.
 %patch11 -p1 -b .db
 
 %build
-# (tpg) for patch 7
-NOCONFIGURE=1 xdt-autogen
-
 %configure2_5x \
 %if %mdkversion < 200900
 	--sysconfdir=%{_sysconfdir}/X11 \
 %endif
-	--disable-static \
-	--enable-xdg-user-dirs
+	--disable-static
 
 %make
 
