@@ -1,6 +1,6 @@
 Summary:	Desktop manager for the Xfce Desktop Environment
 Name:		xfdesktop
-Version:	4.5.91
+Version:	4.5.92
 Release:	%mkrel 1
 License:	GPLv2+
 Group:		Graphical desktop/Xfce
@@ -11,11 +11,11 @@ Patch5:		%{name}-4.4.2-default-mdv-color.patch
 BuildRequires:	libgdk_pixbuf2.0-devel
 BuildRequires:	xfce4-panel-devel >= %{version}
 BuildRequires:	exo-devel
-BuildRequires:	thunar-devel >= 0.9.91
+BuildRequires:	thunar-devel >= 0.9.92
 BuildRequires:	libwnck-devel
-BuildRequires:	xfconf-devel
+BuildRequires:	xfconf-devel >= %{version}
 BuildRequires:	libglade2-devel
-BuildRequires:	libxfce4menu-devel
+BuildRequires:	libxfce4menu-devel >= %{version}
 Requires:	mandriva-theme
 Requires:	desktop-common-data
 Requires:	xfce-utils >= %{version}
@@ -40,7 +40,14 @@ real multiscreen and xinerama support, and it provides a desktop menu editor.
 	--sysconfdir=%{_sysconfdir}/X11 \
 %endif
 	--disable-static \
-	--enable-menu-editor
+	--enable-menu-editor \
+	--enable-desktop-icons \
+	--enable-file-icons \
+	--enable-thunarx \
+	--enable-exo \
+	--enable-desktop-menu \
+	--enable-desktop-menu-dir-monitor \
+	--enable-panel-plugin
 
 %make
 
