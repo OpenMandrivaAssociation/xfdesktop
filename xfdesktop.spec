@@ -1,6 +1,6 @@
 Summary:	Desktop manager for the Xfce Desktop Environment
 Name:		xfdesktop
-Version:	4.5.93
+Version:	4.5.99.1
 Release:	%mkrel 1
 License:	GPLv2+
 Group:		Graphical desktop/Xfce
@@ -40,7 +40,6 @@ real multiscreen and xinerama support, and it provides a desktop menu editor.
 	--sysconfdir=%{_sysconfdir}/X11 \
 %endif
 	--disable-static \
-	--enable-menu-editor \
 	--enable-desktop-icons \
 	--enable-file-icons \
 	--enable-thunarx \
@@ -86,6 +85,5 @@ rm -rf %{buildroot}
 %{_iconsdir}/hicolor/*
 %{_datadir}/pixmaps/*
 %{_datadir}/xfce4/*
-%{_datadir}/xfce4-menueditor
 %{_datadir}/desktop-directories/*.directory
 %{_mandir}/man1/*
