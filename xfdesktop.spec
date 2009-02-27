@@ -1,3 +1,5 @@
+%define _disable_ld_no_undefined 1
+
 Summary:	Desktop manager for the Xfce Desktop Environment
 Name:		xfdesktop
 Version:	4.6.0
