@@ -3,7 +3,7 @@
 Summary:	Desktop manager for the Xfce Desktop Environment
 Name:		xfdesktop
 Version:	4.6.0
-Release:	%mkrel 3
+Release:	%mkrel 4
 License:	GPLv2+
 Group:		Graphical desktop/Xfce
 URL:		http://www.xfce.org
@@ -80,7 +80,7 @@ rm -rf %{buildroot}
 %dir %{_sysconfdir}/X11/xdg/xfce4/desktop
 %exclude %{_sysconfdir}/X11/xdg/xfce4/desktop/*
 %endif
-%{_sysconfdir}/xdg/menus/xfce-applications.menu
+%exclude %{_sysconfdir}/xdg/menus/xfce-applications.menu
 %{_bindir}/*
 %{_libdir}/xfce4/*
 %{_datadir}/applications/*
