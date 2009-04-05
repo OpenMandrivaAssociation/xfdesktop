@@ -3,13 +3,18 @@
 Summary:	Desktop manager for the Xfce Desktop Environment
 Name:		xfdesktop
 Version:	4.6.0
-Release:	%mkrel 4
+Release:	%mkrel 5
 License:	GPLv2+
 Group:		Graphical desktop/Xfce
 URL:		http://www.xfce.org
 Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.bz2
-Patch0:		01_show-backdrop-by-default.patch
-Patch5:		%{name}-4.4.2-default-mdv-color.patch
+Patch1:		xfdesktop-4.6.0-no-need-to-call-xfce_menu_init-from-the-stub.patch
+Patch2:		xfdesktop-4.6.0-call-gdk_flush-after-removing-X-properties.patch
+Patch3:		xfdesktop-4.6.0-reload-image-and-icon-view.patch
+Patch4:		xfdesktop-4.6.0-default-acction-to-accept-for-delete-dialgos.patch
+Patch5:		%{name}-4.6.0-default-mdv-color.patch
+Patch6:		xfdesktop-4.6.0-reload-desktop-when-the-1st-img-is-added-to-an-img-list.patch
+Patch7:		xfdesktop-4.6.0-auto-select-images-as-they-are-added-to-the-list.patch
 BuildRequires:	libgdk_pixbuf2.0-devel
 BuildRequires:	xfce4-panel-devel >= %{version}
 BuildRequires:	exo-devel
@@ -33,8 +38,13 @@ real multiscreen and xinerama support, and it provides a desktop menu editor.
 
 %prep
 %setup -q
-#patch0 -p1
-#patch5 -p1
+%patch1 -p1
+%patch2 -p1
+%patch3 -p1
+%patch4 -p1
+%patch5 -p1
+%patch6 -p1
+%patch7 -p1
 
 %build
 %configure2_5x \
