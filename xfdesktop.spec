@@ -1,31 +1,23 @@
-%define _disable_ld_no_undefined 1
-
 Summary:	Desktop manager for the Xfce Desktop Environment
 Name:		xfdesktop
-Version:	4.6.0
-Release:	%mkrel 5
+Version:	4.6.1
+Release:	%mkrel 1
 License:	GPLv2+
 Group:		Graphical desktop/Xfce
 URL:		http://www.xfce.org
 Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.bz2
-Patch1:		xfdesktop-4.6.0-no-need-to-call-xfce_menu_init-from-the-stub.patch
-Patch2:		xfdesktop-4.6.0-call-gdk_flush-after-removing-X-properties.patch
-Patch3:		xfdesktop-4.6.0-reload-image-and-icon-view.patch
-Patch4:		xfdesktop-4.6.0-default-acction-to-accept-for-delete-dialgos.patch
 Patch5:		%{name}-4.6.0-default-mdv-color.patch
-Patch6:		xfdesktop-4.6.0-reload-desktop-when-the-1st-img-is-added-to-an-img-list.patch
-Patch7:		xfdesktop-4.6.0-auto-select-images-as-they-are-added-to-the-list.patch
 BuildRequires:	libgdk_pixbuf2.0-devel
-BuildRequires:	xfce4-panel-devel >= %{version}
+BuildRequires:	xfce4-panel-devel >= 4.6.0
 BuildRequires:	exo-devel
 BuildRequires:	thunar-devel >= 0.9.92
 BuildRequires:	libwnck-devel
-BuildRequires:	xfconf-devel >= %{version}
+BuildRequires:	xfconf-devel >= 4.6.0
 BuildRequires:	libglade2-devel
-BuildRequires:	libxfce4menu-devel >= %{version}
+BuildRequires:	libxfce4menu-devel >= 4.6.0
 Requires:	mandriva-theme
 Requires:	desktop-common-data
-Requires:	xfce-utils >= %{version}
+Requires:	xfce-utils >= 4.6.0
 Requires:	mandriva-xfce-config
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
@@ -38,13 +30,7 @@ real multiscreen and xinerama support, and it provides a desktop menu editor.
 
 %prep
 %setup -q
-%patch1 -p1
-%patch2 -p1
-%patch3 -p1
-%patch4 -p1
 %patch5 -p1
-%patch6 -p1
-%patch7 -p1
 
 %build
 %configure2_5x \
