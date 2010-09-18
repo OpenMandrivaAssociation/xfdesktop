@@ -41,11 +41,11 @@ real multiscreen and xinerama support, and it provides a desktop menu editor.
 %endif
 	--disable-static \
 	--enable-desktop-icons \
-	--enable-file-icons \
+	--disable-file-icons \
 	--enable-thunarx \
 	--enable-exo \
 	--enable-desktop-menu \
-	--enable-desktop-menu-dir-monitor
+	--disable-desktop-menu-dir-monitor
 
 %make
 
