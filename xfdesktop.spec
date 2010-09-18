@@ -1,20 +1,22 @@
+%define url_ver %(echo %{version} | cut -c 1-3)
+
 Summary:	Desktop manager for the Xfce Desktop Environment
 Name:		xfdesktop
-Version:	4.6.2
+Version:	4.7.0
 Release:	%mkrel 1
 License:	GPLv2+
 Group:		Graphical desktop/Xfce
 URL:		http://www.xfce.org
-Source0:	http://www.xfce.org/archive/xfce-%{version}/src/%{name}-%{version}.tar.bz2
+Source0:	http://archive.xfce.org/src/xfce/%{name}/%{url_ver}/%{name}-%{version}.tar.bz2
 Patch5:		%{name}-4.6.0-default-mdv-color.patch
 BuildRequires:	libgdk_pixbuf2.0-devel
-BuildRequires:	xfce4-panel-devel >= 4.6.0
-BuildRequires:	exo-devel
-BuildRequires:	thunar-devel >= 0.9.92
+BuildRequires:	xfce4-panel-devel >= 4.7.0
+BuildRequires:	exo-devel >= 0.5.4
+BuildRequires:	thunar-devel >= 1.1.2
 BuildRequires:	libwnck-devel
-BuildRequires:	xfconf-devel >= 4.6.0
+BuildRequires:	xfconf-devel >= 4.7.0
 BuildRequires:	libglade2-devel
-BuildRequires:	libxfce4menu-devel >= 4.6.0
+BuildRequires:	garcon-devel >= 0.1.1
 Requires:	mandriva-theme
 Requires:	desktop-common-data
 Requires:	xfce-utils >= 4.6.0
@@ -43,8 +45,7 @@ real multiscreen and xinerama support, and it provides a desktop menu editor.
 	--enable-thunarx \
 	--enable-exo \
 	--enable-desktop-menu \
-	--enable-desktop-menu-dir-monitor \
-	--enable-panel-plugin
+	--enable-desktop-menu-dir-monitor
 
 %make
 
@@ -76,12 +77,9 @@ rm -rf %{buildroot}
 %dir %{_sysconfdir}/X11/xdg/xfce4/desktop
 %exclude %{_sysconfdir}/X11/xdg/xfce4/desktop/*
 %endif
-%exclude %{_sysconfdir}/xdg/menus/xfce-applications.menu
 %{_bindir}/*
-%{_libdir}/xfce4/*
 %{_datadir}/applications/*
 %{_iconsdir}/hicolor/*
 %{_datadir}/pixmaps/*
 %{_datadir}/xfce4/*
-%{_datadir}/desktop-directories/*.directory
 %{_mandir}/man1/*
