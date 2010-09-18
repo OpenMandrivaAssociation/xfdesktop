@@ -17,6 +17,7 @@ BuildRequires:	libwnck-devel
 BuildRequires:	xfconf-devel >= 4.7.0
 BuildRequires:	libglade2-devel
 BuildRequires:	garcon-devel >= 0.1.1
+BuildRequires:	libxfce4ui-devel >= 4.7.0
 Requires:	mandriva-theme
 Requires:	desktop-common-data
 Requires:	xfce-utils >= 4.6.0
