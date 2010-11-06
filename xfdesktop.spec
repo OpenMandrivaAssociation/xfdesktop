@@ -37,21 +37,20 @@ real multiscreen and xinerama support, and it provides a desktop menu editor.
 
 %build
 %configure2_5x \
-%if %mdkversion < 200900
-	--sysconfdir=%{_sysconfdir}/X11 \
-%endif
 	--disable-static \
 	--enable-desktop-icons \
-	--disable-file-icons \
-	--enable-thunarx \
+	--enable-file-icons \
+	--disable-thunarx \
+	--enable-gio-unix \
 	--enable-exo \
 	--enable-desktop-menu \
-	--disable-desktop-menu-dir-monitor
+	--with-file-manager-fallback=Thunar
 
 %make
 
 %install
 rm -rf %{buildroot}
+
 %makeinstall_std
 
 %find_lang %{name}
@@ -59,25 +58,9 @@ rm -rf %{buildroot}
 %clean
 rm -rf %{buildroot}
 
-%if %mdkversion < 200900
-%post
-%{update_menus}
-%update_icon_cache hicolor
-%endif
-
-%if %mdkversion < 200900
-%postun
-%{clean_menus}
-%clean_icon_cache hicolor
-%endif
-
 %files -f %{name}.lang
 %defattr(-,root,root)
 %doc README TODO AUTHORS NEWS
-%if %mdkversion < 200900
-%dir %{_sysconfdir}/X11/xdg/xfce4/desktop
-%exclude %{_sysconfdir}/X11/xdg/xfce4/desktop/*
-%endif
 %{_bindir}/*
 %{_datadir}/applications/*
 %{_iconsdir}/hicolor/*
