@@ -2,28 +2,26 @@
 
 Summary:	Desktop manager for the Xfce Desktop Environment
 Name:		xfdesktop
-Version:	4.8.3
-Release:	%mkrel 1
+Version:	4.9.2
+Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/Xfce
 URL:		http://www.xfce.org
 Source0:	http://archive.xfce.org/src/xfce/%{name}/%{url_ver}/%{name}-%{version}.tar.bz2
 Patch5:		%{name}-4.6.0-default-mdv-color.patch
 BuildRequires:	libgdk_pixbuf2.0-devel
-BuildRequires:	xfce4-panel-devel >= 4.7.0
-BuildRequires:	exo-devel >= 0.5.4
-BuildRequires:	thunar-devel >= 1.1.2
+BuildRequires:	xfce4-panel-devel >= 4.9.0
+BuildRequires:	exo-devel >= 0.7.2
+BuildRequires:	thunar-devel >= 1.3.1
 BuildRequires:	libwnck-devel
-BuildRequires:	xfconf-devel >= 4.7.0
-BuildRequires:	libglade2-devel
-BuildRequires:	garcon-devel >= 0.1.1
-BuildRequires:	libxfce4ui-devel >= 4.7.0
+BuildRequires:	xfconf-devel >= 4.9.0
+BuildRequires:	garcon-devel >= 0.1.11
+BuildRequires:	libxfce4ui-devel >= 4.9.1
 BuildRequires:	libnotify-devel
 Requires:	mandriva-theme
 Requires:	desktop-common-data
 Requires:	xfce-utils >= 4.6.0
 Requires:	mandriva-xfce-config
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 The desktop manager sets the background image, provides a right-click
@@ -34,7 +32,7 @@ real multiscreen and xinerama support, and it provides a desktop menu editor.
 
 %prep
 %setup -q
-%patch5 -p1
+#%patch5 -p1
 
 %build
 %configure2_5x \
@@ -43,24 +41,18 @@ real multiscreen and xinerama support, and it provides a desktop menu editor.
 	--enable-file-icons \
 	--disable-thunarx \
 	--enable-gio-unix \
-	--enable-exo \
+	--enable-notifications \
 	--enable-desktop-menu \
 	--with-file-manager-fallback=Thunar
 
 %make
 
 %install
-rm -rf %{buildroot}
-
 %makeinstall_std
 
-%find_lang %{name}
-
-%clean
-rm -rf %{buildroot}
+%find_lang %{name} %{name}.lang
 
 %files -f %{name}.lang
-%defattr(-,root,root)
 %doc README TODO AUTHORS NEWS
 %{_bindir}/*
 %{_datadir}/applications/*
