@@ -3,7 +3,7 @@
 Summary:	Desktop manager for the Xfce Desktop Environment
 Name:		xfdesktop
 Version:	4.9.2
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		Graphical desktop/Xfce
 URL:		http://www.xfce.org
@@ -20,7 +20,7 @@ BuildRequires:	libxfce4ui-devel >= 4.9.1
 BuildRequires:	libnotify-devel
 Requires:	mandriva-theme
 Requires:	desktop-common-data
-Requires:	xfce-utils >= 4.6.0
+Requires:	xfce4-session >= 4.9.0
 Requires:	mandriva-xfce-config
 
 %description
