@@ -18,6 +18,7 @@ BuildRequires:	xfconf-devel >= 4.9.0
 BuildRequires:	garcon-devel >= 0.1.11
 BuildRequires:	libxfce4ui-devel >= 4.9.1
 BuildRequires:	libnotify-devel
+Conflicts:      xfce-utils <= 4.8.3-1
 Requires:	mandriva-theme
 Requires:	desktop-common-data
 Requires:	xfce4-session >= 4.9.0
