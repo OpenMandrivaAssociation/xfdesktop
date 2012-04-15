@@ -59,4 +59,5 @@ real multiscreen and xinerama support, and it provides a desktop menu editor.
 %{_datadir}/applications/*
 %{_iconsdir}/hicolor/*
 %{_datadir}/pixmaps/*
+%{_datadir}/backgrounds/xfce/xfce-blue.jpg
 %{_mandir}/man1/*
