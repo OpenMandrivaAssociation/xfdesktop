@@ -59,5 +59,4 @@ real multiscreen and xinerama support, and it provides a desktop menu editor.
 %{_datadir}/applications/*
 %{_iconsdir}/hicolor/*
 %{_datadir}/pixmaps/*
-%{_datadir}/xfce4/*
 %{_mandir}/man1/*
