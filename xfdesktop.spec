@@ -10,13 +10,13 @@ URL:		http://www.xfce.org
 Source0:	http://archive.xfce.org/src/xfce/%{name}/%{url_ver}/%{name}-%{version}.tar.bz2
 Patch5:		%{name}-4.6.0-default-mdv-color.patch
 BuildRequires:	libgdk_pixbuf2.0-devel
-BuildRequires:	xfce4-panel-devel >= 4.9.0
-BuildRequires:	exo-devel >= 0.7.2
-BuildRequires:	thunar-devel >= 1.3.1
+BuildRequires:	xfce4-panel-devel >= 4.10.0
+BuildRequires:	exo-devel >= 0.8.0
+BuildRequires:	thunar-devel >= 1.4.0
 BuildRequires:	libwnck-devel
-BuildRequires:	xfconf-devel >= 4.9.0
-BuildRequires:	garcon-devel >= 0.1.11
-BuildRequires:	libxfce4ui-devel >= 4.9.1
+BuildRequires:	xfconf-devel >= 4.10.0
+BuildRequires:	garcon-devel >= 0.2.0
+BuildRequires:	libxfce4ui-devel >= 4.10.0
 BuildRequires:	libnotify-devel
 Conflicts:      xfce-utils <= 4.8.3-1
 Requires:	mandriva-theme
