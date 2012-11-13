@@ -1,0 +1,22 @@
+diff -Naur xfdesktop-4.6.0/src/xfce-backdrop.c xfdesktop-4.6.0.tpg/src/xfce-backdrop.c
+--- xfdesktop-4.6.0/src/xfce-backdrop.c	2009-02-25 22:32:34.000000000 +0000
++++ xfdesktop-4.6.0.tpg/src/xfce-backdrop.c	2009-04-05 19:04:24.000000000 +0000
+@@ -316,12 +316,12 @@
+     backdrop->priv->show_image = TRUE;
+ 
+     /* color defaults */
+-    backdrop->priv->color1.red = 0x1515;
+-    backdrop->priv->color1.green = 0x2222;
+-    backdrop->priv->color1.blue = 0x3333;
+-    backdrop->priv->color2.red = 0x1515;
+-    backdrop->priv->color2.green = 0x2222;
+-    backdrop->priv->color2.blue = 0x3333;
++    backdrop->priv->color1.red = 0x3b00;
++    backdrop->priv->color1.green = 0x5b00;
++    backdrop->priv->color1.blue = 0x8900;
++    backdrop->priv->color2.red = 0x2800;
++    backdrop->priv->color2.green = 0x5400;
++    backdrop->priv->color2.blue = 0xb000;
+ }
+ 
+ static void
