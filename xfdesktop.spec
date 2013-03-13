@@ -1,21 +1,21 @@
-%define url_ver %(echo %{version} | cut -c 1-3)
+%define url_ver %(echo %{version} | cut -c 1-4)
 
 Summary:	Desktop manager for the Xfce Desktop Environment
 Name:		xfdesktop
-Version:	4.10.0
-Release:	3
+Version:	4.10.2
+Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/Xfce
 URL:		http://www.xfce.org
 Source0:	http://archive.xfce.org/src/xfce/%{name}/%{url_ver}/%{name}-%{version}.tar.bz2
 Patch5:		%{name}-4.6.0-default-mdv-color.patch
-BuildRequires:	libgdk_pixbuf2.0-devel
-BuildRequires:	xfce4-panel-devel >= 4.10.0
-BuildRequires:	exo-devel >= 0.8.0
-BuildRequires:	thunar-devel >= 1.4.0
+BuildRequires:	pkgconfig(gdk-pixbuf-2.0)
+BuildRequires:	pkgconfig(libxfce4panel-1.0)
+BuildRequires:	pkgconfig(exo-1)
+BuildRequires:	pkgconfig(thunarx-2)
 BuildRequires:	pkgconfig(libwnck-1.0)
-BuildRequires:	xfconf-devel >= 4.10.0
-BuildRequires:	garcon-devel >= 0.2.0
+BuildRequires:	pkgconfig(libxfconf-0)
+BuildRequires:	pkgconfig(garcon-1)
 BuildRequires:	pkgconfig(libxfce4ui-1) >= 4.10.0
 BuildRequires:	pkgconfig(libnotify)
 Conflicts:      xfce-utils <= 4.8.3-1
