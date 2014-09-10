@@ -1,3 +1,4 @@
----
-sources:
+removed_sources:
   xfdesktop-4.10.2.tar.bz2: 19df6acafd3be6c44bf385414ea346932f9a7056
+sources:
+  xfdesktop-4.11.7.tar.bz2: ec67031e6cd510a1c80d30aa93441eed24cc38f7
