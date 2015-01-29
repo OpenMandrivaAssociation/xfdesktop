@@ -2,7 +2,7 @@
 
 Summary:	Desktop manager for the Xfce Desktop Environment
 Name:		xfdesktop
-Version:	4.11.7
+Version:	4.11.8
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/Xfce
@@ -36,7 +36,7 @@ real multiscreen and xinerama support, and it provides a desktop menu editor.
 #%patch5 -p1
 
 %build
-%configure2_5x \
+%configure \
 	--disable-static \
 	--enable-desktop-icons \
 	--enable-file-icons \
