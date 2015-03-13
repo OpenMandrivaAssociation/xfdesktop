@@ -2,8 +2,8 @@
 
 Summary:	Desktop manager for the Xfce Desktop Environment
 Name:		xfdesktop
-Version:	4.11.8
-Release:	2
+Version:	4.12.0
+Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/Xfce
 URL:		http://www.xfce.org
@@ -16,7 +16,7 @@ BuildRequires:	pkgconfig(thunarx-2)
 BuildRequires:	pkgconfig(libwnck-1.0)
 BuildRequires:	pkgconfig(libxfconf-0)
 BuildRequires:	pkgconfig(garcon-1)
-BuildRequires:	pkgconfig(libxfce4ui-1) >= 4.11
+BuildRequires:	pkgconfig(libxfce4ui-1) >= 4.12
 BuildRequires:	pkgconfig(libnotify)
 Conflicts:      xfce-utils <= 4.8.3-1
 Requires:	distro-theme
