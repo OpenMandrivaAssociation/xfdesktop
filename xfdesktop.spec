@@ -1,8 +1,9 @@
 %define url_ver %(echo %{version} | cut -c 1-4)
+%define _disable_rebuild_configure 1
 
 Summary:	Desktop manager for the Xfce Desktop Environment
 Name:		xfdesktop
-Version:	4.12.0
+Version:	4.12.4
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/Xfce
