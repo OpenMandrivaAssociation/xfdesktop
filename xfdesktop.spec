@@ -3,7 +3,7 @@
 
 Summary:	Desktop manager for the Xfce Desktop Environment
 Name:		xfdesktop
-Version:	4.12.4
+Version:	4.14.1
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/Xfce
@@ -11,12 +11,16 @@ URL:		http://www.xfce.org
 Source0:	http://archive.xfce.org/src/xfce/%{name}/%{url_ver}/%{name}-%{version}.tar.bz2
 Patch5:		%{name}-4.6.0-default-mdv-color.patch
 BuildRequires:	pkgconfig(gdk-pixbuf-2.0)
+BuildRequires:	pkgconfig(dbus-glib-1)
+BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(libxfce4panel-1.0)
-BuildRequires:	pkgconfig(exo-1)
-BuildRequires:	pkgconfig(thunarx-2)
-BuildRequires:	pkgconfig(libwnck-1.0)
+BuildRequires:	pkgconfig(exo-2)
+BuildRequires:	pkgconfig(thunarx-3)
+BuildRequires:	pkgconfig(libwnck-3.0)
 BuildRequires:	pkgconfig(libxfconf-0)
 BuildRequires:	pkgconfig(garcon-1)
+BuildRequires:	pkgconfig(garcon-gtk3-1)
+BuildRequires:	pkgconfig(libxfce4util-1.0)
 BuildRequires:	pkgconfig(libxfce4ui-1) >= 4.12
 BuildRequires:	pkgconfig(libnotify)
 Conflicts:      xfce-utils <= 4.8.3-1
@@ -41,7 +45,7 @@ real multiscreen and xinerama support, and it provides a desktop menu editor.
 	--disable-static \
 	--enable-desktop-icons \
 	--enable-file-icons \
-	--disable-thunarx \
+	--enable-thunarx \
 	--enable-gio-unix \
 	--enable-notifications \
 	--enable-desktop-menu \
