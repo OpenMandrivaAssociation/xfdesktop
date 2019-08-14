@@ -51,10 +51,10 @@ real multiscreen and xinerama support, and it provides a desktop menu editor.
 	--enable-desktop-menu \
 	--with-file-manager-fallback=Thunar
 
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 %find_lang %{name} %{name}.lang
 
@@ -65,4 +65,5 @@ real multiscreen and xinerama support, and it provides a desktop menu editor.
 %{_iconsdir}/hicolor/*
 %{_datadir}/pixmaps/*
 %{_datadir}/backgrounds/xfce/xfce-*.jpg
+%{_datadir}/backgrounds/xfce/xfce-stripes.png
 %{_mandir}/man1/*
