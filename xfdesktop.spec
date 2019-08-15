@@ -13,7 +13,7 @@ Patch5:		%{name}-4.6.0-default-mdv-color.patch
 BuildRequires:	pkgconfig(gdk-pixbuf-2.0)
 BuildRequires:	pkgconfig(dbus-glib-1)
 BuildRequires:	pkgconfig(gtk+-3.0)
-BuildRequires:	pkgconfig(libxfce4panel-1.0)
+BuildRequires:	pkgconfig(libxfce4panel-2.0)
 BuildRequires:	pkgconfig(exo-2)
 BuildRequires:	pkgconfig(thunarx-3)
 BuildRequires:	pkgconfig(libwnck-3.0)
