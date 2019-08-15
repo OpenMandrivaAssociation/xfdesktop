@@ -21,7 +21,7 @@ BuildRequires:	pkgconfig(libxfconf-0)
 BuildRequires:	pkgconfig(garcon-1)
 BuildRequires:	pkgconfig(garcon-gtk3-1)
 BuildRequires:	pkgconfig(libxfce4util-1.0)
-BuildRequires:	pkgconfig(libxfce4ui-1) >= 4.12
+BuildRequires:	pkgconfig(libxfce4ui-2)
 BuildRequires:	pkgconfig(libnotify)
 Conflicts:      xfce-utils <= 4.8.3-1
 Requires:	distro-theme
