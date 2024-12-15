@@ -29,6 +29,7 @@ BuildRequires:	pkgconfig(garcon-gtk3-1)
 BuildRequires:	pkgconfig(libxfce4util-1.0)
 BuildRequires:	pkgconfig(libxfce4ui-2)
 BuildRequires:	pkgconfig(libnotify)
+BuildRequires:  pkgconfig(yaml-0.1)
 Conflicts:      xfce-utils <= 4.8.3-1
 Requires:	distro-theme
 Requires:	desktop-common-data
