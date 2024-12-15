@@ -72,7 +72,6 @@ real multiscreen and xinerama support, and it provides a desktop menu editor.
 %{_datadir}/pixmaps/*
 %{_datadir}/backgrounds/xfce/xfce-*.jpg
 %{_datadir}/backgrounds/xfce/xfce-stripes.png
-%{_datadir}/backgrounds/xfce/xfce-verticals.png
 %{_datadir}/backgrounds/xfce/xfce-flower.svg
 %{_datadir}/backgrounds/xfce/xfce-leaves.svg
 %{_datadir}/backgrounds/xfce/xfce-shapes.svg
