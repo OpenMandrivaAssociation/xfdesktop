@@ -3,19 +3,23 @@
 
 Summary:	Desktop manager for the Xfce Desktop Environment
 Name:		xfdesktop
-Version:	4.18.1
+Version:	4.20.0
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/Xfce
 URL:		https://www.xfce.org
-Source0:	http://archive.xfce.org/src/xfce/%{name}/%{url_ver}/%{name}-%{version}.tar.bz2
-Patch5:		%{name}-4.6.0-default-mdv-color.patch
+Source0:	https://archive.xfce.org/src/xfce/%{name}/%{url_ver}/%{name}-%{version}.tar.bz2
 
 BuildRequires:	intltool
+BuildRequires:  pkgconfig(cairo)
 BuildRequires:	pkgconfig(gdk-pixbuf-2.0)
 BuildRequires:	pkgconfig(dbus-glib-1)
 BuildRequires:	pkgconfig(gtk+-3.0)
+BuildRequires:  pkgconfig(gdk-wayland-3.0)
+BuildRequires:  pkgconfig(gtk-layer-shell-0)
 BuildRequires:	pkgconfig(libxfce4panel-2.0)
+BuildRequires:  pkgconfig(libxfce4windowing-0)
+BuildRequires:  pkgconfig(libxfce4windowingui-0)
 BuildRequires:	pkgconfig(exo-2)
 BuildRequires:	pkgconfig(thunarx-3)
 BuildRequires:	pkgconfig(libwnck-3.0)
@@ -39,8 +43,7 @@ gradient support for background color, saturation support for background image,
 real multiscreen and xinerama support, and it provides a desktop menu editor.
 
 %prep
-%setup -q
-#%patch5 -p1
+%autosetup -p1
 
 %build
 %configure \
@@ -61,7 +64,7 @@ real multiscreen and xinerama support, and it provides a desktop menu editor.
 %find_lang %{name} %{name}.lang
 
 %files -f %{name}.lang
-%doc README* TODO AUTHORS NEWS
+%doc README* AUTHORS NEWS
 %{_bindir}/*
 %{_datadir}/applications/*
 %{_iconsdir}/hicolor/*
